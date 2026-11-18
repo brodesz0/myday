@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="My Day">
+<meta name="theme-color" content="#F5F3EE">
+<title>My Day</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<!--
+  MY DAY - a small habit app for the mood plan.
+  Everything is in this one file. Data is saved only on the phone (localStorage).
+
+  To change a task's wording or a dose: edit the HABITS list in the script below
+  (the "text" and "hint" fields), then upload the new file to GitHub.
+  Do not change the "id" fields, or saved history for that habit is lost.
+
+  Test mode: open the page with ?test at the end of the address
+  (e.g. https://NAME.github.io/myday/?test). It uses separate data and adds
+  "Next day" and "Fill last 7 days" buttons under More.
+-->
+<style>
+:root{
+  --bg:#F5F3EE; --card:#FFFFFF; --ink:#2F3437; --muted:#767B7E;
+  --accent:#5E8C6A; --accent-soft:#E3EEE5; --line:#E4E0D8; --warm:#F3E6CF; --warm-ink:#8A6A33;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+button{font:inherit;color:inherit}
+#app{max-width:520px;margin:0 auto;padding:14px 18px 24px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.testbar{background:#2F3437;color:#fff;font-size:13px;text-align:center;border-radius:10px;padding:6px;margin-bottom:8px}
+.date{color:var(--muted);font-size:15px;margin-top:6px}
+h1{font-size:28px;line-height:1.2;margin:2px 0 14px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:-8px 0 16px}
+.tabs{display:flex;background:#EAE6DE;border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+.tab{flex:1;border:0;background:transparent;padding:9px 4px;border-radius:11px;font-size:15px;color:var(--muted);line-height:1.2}
+.tab.on{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.tab small{display:block;font-size:11px;color:var(--accent);font-weight:600;min-height:13px}
+.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.card.soft{background:var(--accent-soft)}
+.card.warm{background:var(--warm)}
+.card p{margin:0 0 12px}
+.ctitle{font-weight:600;margin-bottom:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:12px 16px;font-size:16px;font-weight:600;background:var(--accent);color:#fff;min-height:46px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.wide{width:100%}
+.task{display:flex;align-items:center;gap:14px;width:100%;border:0;background:var(--card);border-radius:18px;
+  padding:16px;margin-bottom:10px;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:background .25s;min-height:64px}
+.task .box{flex:0 0 34px;height:34px;border-radius:50%;border:2px solid #C8C3B9;display:flex;align-items:center;justify-content:center;transition:all .25s}
+.task.done{background:var(--accent-soft)}
+.task.done .box{background:var(--accent);border-color:var(--accent);transform:scale(1.06)}
+.task.done .box::after{content:"";width:8px;height:15px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.task .t{font-size:18px;font-weight:600;line-height:1.25}
+.task .h{font-size:14px;color:var(--muted);margin-top:3px}
+.task.small{min-height:52px;padding:12px 14px}
+.task.small .t{font-size:16px;font-weight:500}
+.task.small .box{flex-basis:28px;height:28px}
+.smoke{display:flex;align-items:center;gap:10px;width:100%;border:0;border-radius:14px;padding:11px 14px;margin-bottom:12px;
+  background:var(--warm);color:var(--warm-ink);font-weight:600;font-size:15px;text-align:left}
+.smoke .dot{flex:0 0 22px;height:22px;border-radius:50%;border:2px solid #C9AD7C;display:flex;align-items:center;justify-content:center}
+.smoke.done{background:var(--accent-soft);color:var(--accent)}
+.smoke.done .dot{background:var(--accent);border-color:var(--accent)}
+.smoke.done .dot::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.smokes{display:flex;gap:8px;margin-bottom:12px}
+.smokes .smoke{margin:0;flex:1;justify-content:center;padding:10px 6px;font-size:13px}
+.mood.done{background:var(--accent-soft)}
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.moods button{border:0;border-radius:12px;height:46px;font-size:18px;font-weight:600;background:#F1EEE8}
+.moods button.on{background:var(--accent);color:#fff}
+.donemsg{text-align:center;color:var(--accent);font-weight:600;padding:10px 0 14px}
+.donemsg.anim{animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.settledhead{width:100%;border:0;background:transparent;color:var(--muted);font-size:15px;padding:10px 4px;text-align:left}
+.empty{color:var(--muted);text-align:center;padding:24px 8px}
+.footer{margin-top:auto;display:flex;gap:10px;padding-top:16px}
+.footer .btn{flex:1}
+.link{border:0;background:transparent;color:var(--muted);text-decoration:underline;font-size:15px;padding:12px;width:100%}
+.overlay{position:fixed;inset:0;background:rgba(30,32,34,.35);display:flex;align-items:flex-end;justify-content:center;z-index:10}
+.overlay.anim{animation:fadein .2s}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.sheet{background:var(--bg);width:100%;max-width:520px;border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom));
+  max-height:88vh;overflow:auto}
+.overlay.anim .sheet{animation:up .25s ease}
+@keyframes up{from{transform:translateY(30px)}to{transform:none}}
+.sheet h2{font-size:21px;margin:4px 0 14px}
+.menuitem{display:block;width:100%;border:0;background:var(--card);border-radius:14px;padding:15px 16px;margin-bottom:8px;text-align:left;font-size:17px}
+.menuitem small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+pre.export{white-space:pre-wrap;font:13px/1.45 ui-monospace,Menlo,monospace;background:var(--card);border-radius:14px;padding:14px;max-height:45vh;overflow:auto}
+.chart{display:flex;align-items:flex-end;gap:3px;height:130px;background:var(--card);border-radius:14px;padding:12px 10px 8px}
+.chart .c{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.chart .b{width:100%;border-radius:4px 4px 2px 2px;background:var(--accent)}
+.chart .b.bad{background:#D7B77F}
+.chart .n{width:5px;height:5px;border-radius:50%;background:#D5D0C6}
+.chart .c.today .b,.chart .c.today .n{outline:2px solid var(--ink);outline-offset:1px}
+.axis{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:6px 4px 14px}
+.stat{display:flex;gap:10px;margin-bottom:12px}
+.stat div{flex:1;background:var(--card);border-radius:14px;padding:12px;text-align:center}
+.stat b{display:block;font-size:24px}
+.stat span{font-size:13px;color:var(--muted)}
+.muted{color:var(--muted);font-size:14px}
+.help p{margin:0 0 10px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<input type="file" id="restorefile" accept="application/json,.json" style="display:none">
+<script>
+(function () {
+'use strict';
+
+/* ================= SETTINGS YOU CAN EDIT ================= */
+// Habits in the order they are introduced (easiest first).
+// part: morning | afternoon | evening | allday
+// days: only on these weekdays (0 = Sunday, 1 = Monday ... 6 = Saturday). No days = every day.
+var HABITS = [
+  // Starting set (1-9)
+  {id:'water',    n:1,  part:'morning',   text:'Glass of water on waking'},
+  {id:'light',    n:2,  part:'morning',   text:'10 min outside in daylight', hint:'No sunglasses. Longer if it is cloudy.'},
+  {id:'ferment1', n:3,  part:'morning',   text:'Breakfast with kefir or yoghurt'},
+  {id:'walk',     n:4,  part:'afternoon', text:'A walk, any length'},
+  {id:'lunch',    n:5,  part:'afternoon', text:'Proper lunch with protein'},
+  {id:'pause',    n:6,  part:'afternoon', text:'2 min outside or a short rest'},
+  {id:'dim',      n:7,  part:'evening',   text:'Dim the lights'},
+  {id:'phoneaway',n:8,  part:'evening',   text:'Phone in the kitchen, 1 hour before bed'},
+  {id:'mood',     n:9,  part:'evening',   text:'Mood score', type:'mood'},
+  // Offered one at a time
+  {id:'supps',    n:10, part:'morning',   text:'Supplements with breakfast', hint:'EPA 1,000 mg + creatine 3–5 g',
+     offer:'Supplements with breakfast (EPA 1,000 mg + creatine 3–5 g)'},
+  {id:'zone2',    n:11, part:'afternoon', text:'Brisk walk, 20–30 min', days:[1,4,0], dayText:{1:'Dancing class (60 min)'},
+     hint:'You can talk, but it takes some effort.', offer:'Zone 2: dancing on Monday + brisk walks on Thursday and Sunday'},
+  {id:'smoke',    n:12, part:'allday',    text:'Smoke-free', type:'smoke',
+     offer:'A smoke-free tick for each part of the day (it disappears after 14 smoke-free days in a row)'},
+  {id:'coffee',   n:13, part:'morning',   text:'First coffee 90 min after waking'},
+  {id:'ferment2', n:14, part:'afternoon', text:'Second fermented serving', hint:'Kefir, yoghurt, sauerkraut or pickles'},
+  {id:'strength', n:15, part:'afternoon', text:'Light strength training', days:[2,5], hint:'2 sets of each exercise, light weights.',
+     offer:'Light strength training on Tuesday and Friday'},
+  {id:'rest',     n:16, part:'afternoon', text:'Rest: NSDR if tired, or 3 slow sighs if stressed', hint:'Sigh: two inhales through the nose, one long exhale.'},
+  {id:'fish',     n:17, part:'evening',   text:'Canned sardines or mackerel', days:[3,6], offer:'Canned sardines or mackerel on Wednesday and Saturday'},
+  {id:'nocaf',    n:18, part:'afternoon', text:'No caffeine after 2 p.m.'},
+  {id:'cold',     n:19, part:'morning',   text:'Cold finish to the shower', hint:'Start with 30 seconds; add a little each week.'},
+  {id:'nophone',  n:20, part:'morning',   text:'No phone for the first hour'},
+  {id:'sunset',   n:21, part:'afternoon', text:'10 min outside near sunset'},
+  {id:'phoneoff', n:22, part:'afternoon', text:'Phone-off block (9–12 or 14–17)', days:[6,0], offer:'A phone-off block on Saturday and Sunday'},
+  {id:'fulltrain',n:23, part:'afternoon', text:'Workout from the plan', days:[2,3,5,6], replaces:'strength',
+     dayText:{2:'Legs workout', 3:'Upper-body workout', 5:'Intervals (25 min)', 6:'Arms and calves workout'},
+     offer:'The full training week: legs Tue, upper body Wed, intervals Fri, arms Sat'}
+];
+var START_SET = 9;          // habits 1-9 are there from day one
+var MAX_TASKS = 3;          // per part of the day
+var SNOOZE_DAYS = 3;        // "Not yet" asks again after this many days
+var MIN_DAYS_BETWEEN = 3;   // at least this many days between new habits
+var SMOKE_FREE_DAYS = 14;   // smoke-free tick disappears after this many days in a row
+var BAD_TASKS = [
+  {id:'b_light', text:'Outside light, even 5 minutes'},
+  {id:'b_meal',  text:'One proper meal'},
+  {id:'b_walk',  text:'A short walk'}
+];
+/* ========================================================= */
+
+var params = new URLSearchParams(location.search);
+var TEST = params.has('test');
+var KEY = TEST ? 'myday-test-v1' : 'myday-v1';
+var DAY_START_HOUR = 4; // the day changes at 4 a.m., so late evenings count to the same day
+var PARTS = ['morning', 'afternoon', 'evening'];
+var PART_LABEL = {morning:'Morning', afternoon:'Afternoon', evening:'Evening'};
+var GREETING = {morning:'Good morning', afternoon:'Good afternoon', evening:'Good evening'};
+var DONE_MSG = {morning:'Done for now. Enjoy your morning.', afternoon:'Done for now. Nice work.', evening:'All done for today. Sleep well.'};
+var DAYNAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+var app = document.getElementById('app');
+var state = null;
+var ui = {part:null, sheet:null, showSettled:false, exportText:'', msg:'', prevSheet:null, prevDone:{}};
+
+/* ---------- dates ---------- */
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function nowDate(){
+  var d = new Date();
+  if (TEST && state && state.testOffset) d = new Date(d.getTime() + state.testOffset * 864e5);
+  return d;
+}
+function keyOf(d){
+  var x = new Date(d.getTime() - DAY_START_HOUR * 36e5);
+  return x.getFullYear() + '-' + pad(x.getMonth() + 1) + '-' + pad(x.getDate());
+}
+function todayKey(){ return keyOf(nowDate()); }
+function parseKey(k){ var a = k.split('-'); return new Date(+a[0], +a[1] - 1, +a[2], 12); }
+function addDays(k, n){ var d = parseKey(k); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function diffDays(a, b){ return Math.round((parseKey(b) - parseKey(a)) / 864e5); }
+function weekday(k){ return parseKey(k).getDay(); }
+function fmtLong(k){ return parseKey(k).toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long'}); }
+function fmtShort(k){ return parseKey(k).toLocaleDateString('en-GB', {day:'numeric', month:'short'}); }
+function currentPart(){
+  var h = nowDate().getHours();
+  if (h < DAY_START_HOUR) return 'evening';
+  if (h < 12) return 'morning';
+  if (h < 18) return 'afternoon';
+  return 'evening';
+}
+
+/* ---------- storage ---------- */
+function fresh(){
+  var t = keyOf(new Date());
+  var s = {v:1, start:t, added:{}, retired:{}, settled:{}, snooze:null, lastAdded:t,
+    smoke:{since:null, hidden:false, hiddenOn:null}, days:{}, lastEval:null, praise:null,
+    notice:null, intro:true, testOffset:0};
+  HABITS.forEach(function(h){ if (h.n <= START_SET) s.added[h.id] = t; });
+  return s;
+}
+function load(){
+  try {
+    var s = JSON.parse(localStorage.getItem(KEY));
+    if (s && s.v === 1 && s.days && s.added) return s;
+  } catch (e) {}
+  return fresh();
+}
+function save(){
+  try { localStorage.setItem(KEY, JSON.stringify(state)); ui.saveError = false; }
+  catch (e) { ui.saveError = true; }
+}
+
+/* ---------- habit logic ---------- */
+var EMPTY = {done:{}, mood:null, bad:false, badDone:{}};
+function rec(k, create){
+  var r = state.days[k];
+  if (!r && create) r = state.days[k] = {done:{}, mood:null, bad:false, badDone:{}};
+  return r || EMPTY;
+}
+function byId(id){ for (var i = 0; i < HABITS.length; i++) if (HABITS[i].id === id) return HABITS[i]; return null; }
+function byN(a, b){ return a.n - b.n; }
+function activeOn(h, k){
+  var a = state.added[h.id];
+  if (!a || a > k) return false;
+  var r = state.retired[h.id];
+  return !(r && r <= k);
+}
+function scheduledOn(h, k){ return !h.days || h.days.indexOf(weekday(k)) >= 0; }
+function textOn(h, k){ return (h.dayText && h.dayText[weekday(k)]) || h.text; }
+function isDone(h, r){ return h.type === 'mood' ? r.mood != null : !!r.done[h.id]; }
+function smokeVisible(k){
+  var sm = byId('smoke');
+  return sm && activeOn(sm, k) && !state.smoke.hidden;
+}
+
+// The last 7 regular days before today (bad days are skipped, they count neither way).
+function windowDays(t){
+  var out = [], k = addDays(t, -1);
+  for (var i = 0; i < 21 && out.length < 7; i++) {
+    if (k < state.start) break;
+    var r = state.days[k];
+    if (!(r && r.bad)) out.push(k);
+    k = addDays(k, -1);
+  }
+  return out;
+}
+function stats(h, t){
+  var w = windowDays(t), s = 0, d = 0;
+  var full = w.length === 7 && w[6] >= state.added[h.id];
+  w.forEach(function(k){
+    if (activeOn(h, k) && scheduledOn(h, k)) { s++; if (isDone(h, rec(k))) d++; }
+  });
+  return {s:s, d:d, full:full};
+}
+function countsTowardSettle(h){ return h.type !== 'smoke' && h.type !== 'mood'; }
+
+// Runs once a day: marks settled habits and checks the smoke-free streak.
+function evaluate(t){
+  if (state.lastEval === t) return;
+  state.lastEval = t;
+  HABITS.forEach(function(h){
+    if (!countsTowardSettle(h) || state.settled[h.id] || !activeOn(h, t)) return;
+    var st = stats(h, t);
+    if (st.full && st.s > 0 && st.d >= Math.ceil(st.s * 6 / 7)) {
+      state.settled[h.id] = t;
+      state.praise = h.id;
+    }
+  });
+  if (smokeVisible(t) && state.smoke.since) {
+    var streak = 0, k = addDays(t, -1);
+    while (k >= state.smoke.since && streak < SMOKE_FREE_DAYS) {
+      var r = rec(k);
+      if (r.done.smoke_morning && r.done.smoke_afternoon && r.done.smoke_evening) { streak++; k = addDays(k, -1); }
+      else break;
+    }
+    if (streak >= SMOKE_FREE_DAYS) {
+      state.smoke.hidden = true;
+      state.smoke.hiddenOn = t;
+      state.notice = 'smoke';
+    }
+  }
+}
+function nextHabit(){
+  var list = HABITS.slice().sort(byN);
+  for (var i = 0; i < list.length; i++) if (!state.added[list[i].id]) return list[i];
+  return null;
+}
+function latestSettled(){
+  var best = null, bestDate = '';
+  Object.keys(state.settled).forEach(function(id){
+    var h = byId(id);
+    if (h && activeOn(h, todayKey()) && state.settled[id] >= bestDate) { best = id; bestDate = state.settled[id]; }
+  });
+  return best;
+}
+// Is a new habit ready to be offered today?
+function currentOffer(t){
+  var nx = nextHabit();
+  if (!nx) return null;
+  if (state.snooze && t < state.snooze) return null;
+  if (state.lastAdded && diffDays(state.lastAdded, t) < MIN_DAYS_BETWEEN) return null;
+  if (!Object.keys(state.settled).length) return null;
+  if (nx.type !== 'smoke') {
+    var open = 0, stuck = false;
+    HABITS.forEach(function(h){
+      if (h.part !== nx.part || h.type === 'smoke' || !activeOn(h, t)) return;
+      if (nx.replaces === h.id || state.settled[h.id]) return;
+      open++;
+      var st = stats(h, t);
+      if (st.full && st.s > 0 && st.d / st.s < 0.5) stuck = true;
+    });
+    if (open >= MAX_TASKS || stuck) return null;
+  }
+  return nx;
+}
+
+/* ---------- actions ---------- */
+function toggle(id){
+  var r = rec(todayKey(), true);
+  if (r.done[id]) delete r.done[id]; else r.done[id] = true;
+  save(); render();
+}
+function setMood(v){
+  var r = rec(todayKey(), true);
+  r.mood = (r.mood === v ? null : v);
+  save(); render();
+}
+function toggleBadTask(id){
+  var r = rec(todayKey(), true);
+  if (r.badDone[id]) delete r.badDone[id]; else r.badDone[id] = true;
+  save(); render();
+}
+function setBad(on){
+  rec(todayKey(), true).bad = on;
+  ui.sheet = null;
+  save(); render();
+}
+function acceptOffer(){
+  var t = todayKey(), nx = currentOffer(t);
+  if (!nx) return;
+  state.added[nx.id] = t;
+  state.lastAdded = t;
+  state.snooze = null;
+  state.praise = null;
+  if (nx.replaces) state.retired[nx.replaces] = t;
+  if (nx.type === 'smoke') { state.smoke.since = t; state.smoke.hidden = false; state.smoke.hiddenOn = null; }
+  if (nx.part !== 'allday') ui.part = nx.part;
+  save(); render();
+}
+function snoozeOffer(){
+  state.snooze = addDays(todayKey(), SNOOZE_DAYS);
+  state.praise = null;
+  save(); render();
+}
+function bringBackSmoke(){
+  var t = todayKey();
+  state.smoke.hidden = false; state.smoke.hiddenOn = null; state.smoke.since = t;
+  if (!state.added.smoke) state.added.smoke = t;
+  ui.sheet = null;
+  save(); render();
+}
+
+/* ---------- export and backup ---------- */
+function weekText(t){
+  var lines = ['My Day: ' + fmtShort(addDays(t, -6)) + ' to ' + fmtShort(t), ''];
+  var moods = [];
+  for (var i = 6; i >= 0; i--) {
+    var k = addDays(t, -i);
+    if (k < state.start) continue;
+    var r = state.days[k];
+    var head = DAYNAMES[weekday(k)] + ' ' + fmtShort(k);
+    if (!r) { lines.push(head + ': not opened', ''); continue; }
+    if (r.mood != null) moods.push(r.mood);
+    var moodTxt = r.mood != null ? ' | mood ' + r.mood + '/10' : ' | no mood score';
+    if (r.bad) {
+      var bd = BAD_TASKS.filter(function(b){ return r.badDone[b.id]; }).length;
+      lines.push(head + ': bad day, ' + bd + '/3 done' + moodTxt);
+    } else {
+      var hs = HABITS.filter(function(h){ return countsTowardSettle(h) && activeOn(h, k) && scheduledOn(h, k); }).sort(byN);
+      var done = hs.filter(function(h){ return r.done[h.id]; });
+      var miss = hs.filter(function(h){ return !r.done[h.id]; });
+      lines.push(head + ': ' + done.length + '/' + hs.length + ' tasks' + moodTxt);
+      if (done.length) lines.push('  Done: ' + done.map(function(h){ return textOn(h, k); }).join(', '));
+      if (miss.length) lines.push('  Not done: ' + miss.map(function(h){ return textOn(h, k); }).join(', '));
+    }
+    var sm = byId('smoke');
+    if (activeOn(sm, k) && !(state.smoke.hiddenOn && k >= state.smoke.hiddenOn)) {
+      var c = PARTS.filter(function(p){ return r.done['smoke_' + p]; }).length;
+      lines.push('  Smoke-free: ' + c + '/3 parts of the day');
+    }
+    lines.push('');
+  }
+  if (moods.length) {
+    var avg = moods.reduce(function(a, b){ return a + b; }, 0) / moods.length;
+    lines.push('Average mood: ' + avg.toFixed(1) + '/10 (' + moods.length + ' days scored)');
+  }
+  return lines.join('\n');
+}
+function shareText(text){
+  if (navigator.share) {
+    navigator.share({title:'My Day: my week', text:text}).catch(function(){});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){ ui.msg = 'Copied.'; render(); });
+  }
+}
+function copyText(text){
+  if (navigator.clipboard) navigator.clipboard.writeText(text).then(function(){ ui.msg = 'Copied.'; render(); }, function(){});
+}
+function backup(){
+  var data = JSON.stringify({app:'myday', exported:new Date().toISOString(), state:state});
+  var name = 'myday-backup-' + todayKey() + '.json';
+  try {
+    var file = new File([data], name, {type:'application/json'});
+    if (navigator.canShare && navigator.canShare({files:[file]})) {
+      navigator.share({files:[file], title:'My Day backup'}).catch(function(){});
+      return;
+    }
+  } catch (e) {}
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([data], {type:'application/json'}));
+  a.download = name;
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+}
+document.getElementById('restorefile').addEventListener('change', function(e){
+  var f = e.target.files && e.target.files[0];
+  if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function(){
+    try {
+      var obj = JSON.parse(rd.result);
+      var s = obj && obj.state;
+      if (!s || s.v !== 1 || !s.days || !s.added) throw new Error('bad');
+      if (!confirm('Replace everything in the app with this backup?')) return;
+      state = s; state.lastEval = null; ui.sheet = null; ui.part = currentPart();
+      save(); render();
+    } catch (err) { alert('This file is not a My Day backup.'); }
+    e.target.value = '';
+  };
+  rd.readAsText(f);
+});
+
+/* ---------- test mode helpers ---------- */
+function testNextDay(){ state.testOffset = (state.testOffset || 0) + 1; ui.part = currentPart(); ui.sheet = null; save(); render(); }
+function testFill(){
+  var t = todayKey();
+  for (var i = 7; i >= 1; i--) {
+    var k = addDays(t, -i);
+    if (k < state.start) state.start = k;
+    HABITS.forEach(function(h){
+      if (state.added[h.id] === t) state.added[h.id] = k;
+      if (state.retired[h.id] === t) state.retired[h.id] = k;
+    });
+    if (state.smoke.since === t) state.smoke.since = k;
+  }
+  for (var j = 7; j >= 1; j--) {
+    var k2 = addDays(t, -j), r = rec(k2, true);
+    HABITS.forEach(function(h){
+      if (!activeOn(h, k2) || !scheduledOn(h, k2)) return;
+      if (h.type === 'mood') r.mood = 5 + Math.floor(Math.random() * 4);
+      else if (h.type === 'smoke') PARTS.forEach(function(p){ r.done['smoke_' + p] = true; });
+      else r.done[h.id] = true;
+    });
+  }
+  if (state.lastAdded === t) state.lastAdded = addDays(t, -7);
+  state.lastEval = null; ui.sheet = null;
+  save(); render();
+}
+function testReset(){
+  if (!confirm('Delete all test data?')) return;
+  localStorage.removeItem(KEY); state = fresh(); ui.sheet = null; ui.part = currentPart(); save(); render();
+}
+
+/* ---------- views ---------- */
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+function taskRow(id, text, hint, done, action, small){
+  return '<button class="task' + (done ? ' done' : '') + (small ? ' small' : '') + '" data-a="' + action + '" data-id="' + esc(id) +
+    '" aria-pressed="' + (done ? 'true' : 'false') + '"><span class="box"></span><span><div class="t">' + esc(text) + '</div>' +
+    (hint ? '<div class="h">' + esc(hint) + '</div>' : '') + '</span></button>';
+}
+function moodCard(r, optional){
+  var h = '<div class="card mood' + (r.mood != null ? ' done' : '') + '"><div class="ctitle">' + (optional ? 'Mood score (optional)' : 'Mood score') + '</div>' +
+    '<div class="muted">How was today? 1 = very low, 10 = very good</div><div class="moods">';
+  for (var i = 1; i <= 10; i++) h += '<button data-a="mood" data-v="' + i + '" class="' + (r.mood === i ? 'on' : '') + '">' + i + '</button>';
+  return h + '</div></div>';
+}
+function smokeBtn(r, p, short){
+  var done = !!r.done['smoke_' + p];
+  return '<button class="smoke' + (done ? ' done' : '') + '" data-a="toggle" data-id="smoke_' + p + '" aria-pressed="' + done + '">' +
+    '<span class="dot"></span>' + (short ? PART_LABEL[p] : 'Smoke-free this ' + p) + '</button>';
+}
+function notices(t){
+  var h = '';
+  if (state.intro) {
+    h += '<div class="card soft"><div class="ctitle">Three small things at a time</div><p>Tick them when they’re done. Missing one is fine; nothing is lost. ' +
+      'New habits are offered only when these feel easy.</p><button class="btn" data-a="intro">Got it</button></div>';
+  }
+  if (state.notice === 'smoke') {
+    h += '<div class="card soft"><div class="ctitle">' + SMOKE_FREE_DAYS + ' smoke-free days in a row</div><p>That’s a real achievement. The smoke-free tick is gone now.</p>' +
+      '<button class="btn" data-a="notice">Thanks</button></div>';
+  }
+  var nx = currentOffer(t);
+  if (nx) {
+    var x = state.praise && byId(state.praise) ? state.praise : latestSettled();
+    var xt = x ? byId(x).text : null;
+    h += '<div class="card soft"><div class="ctitle">' + (xt ? 'You’ve done “' + esc(xt) + '” all week.' : 'You’re doing well.') + '</div>' +
+      '<p>Add “' + esc(nx.offer || nx.text) + '”?</p><div class="row"><button class="btn" data-a="accept">Yes, add it</button>' +
+      '<button class="btn ghost" data-a="snooze">Not yet</button></div></div>';
+  } else if (state.praise && byId(state.praise)) {
+    h += '<div class="card soft"><div class="ctitle">“' + esc(byId(state.praise).text) + '” is part of your day now.</div>' +
+      '<p>Nice work.</p><button class="btn" data-a="praise">Thanks</button></div>';
+  }
+  return h;
+}
+function mainView(t, r){
+  var cp = currentPart(), P = ui.part || cp;
+  var h = '<h1>' + GREETING[cp] + '</h1><div class="tabs">';
+  PARTS.forEach(function(p){
+    h += '<button class="tab' + (p === P ? ' on' : '') + '" data-a="part" data-id="' + p + '">' + PART_LABEL[p] + '<small>' + (p === cp ? 'now' : '') + '</small></button>';
+  });
+  h += '</div>' + notices(t);
+  if (smokeVisible(t)) h += smokeBtn(r, P);
+
+  var act = HABITS.filter(function(x){ return x.part === P && x.type !== 'smoke' && activeOn(x, t) && scheduledOn(x, t); }).sort(byN);
+  var main = act.filter(function(x){ return !state.settled[x.id]; });
+  var settled = act.filter(function(x){ return state.settled[x.id]; });
+  var list = main;
+
+  if (!list.length) h += '<div class="empty">' + (settled.length ? 'Everything here is already part of your day.' : 'Nothing here right now.') + '</div>';
+  list.forEach(function(x){
+    if (x.type === 'mood') h += moodCard(r);
+    else h += taskRow(x.id, textOn(x, t), x.hint, isDone(x, r), 'toggle');
+  });
+  var allDone = list.length > 0 && list.every(function(x){ return isDone(x, r); });
+  if (allDone) h += '<div class="donemsg' + (ui.prevDone[P] === false ? ' anim' : '') + '">' + DONE_MSG[P] + '</div>';
+  ui.prevDone[P] = allDone;
+
+  if (settled.length) {
+    var nDone = settled.filter(function(x){ return isDone(x, r); }).length;
+    h += '<button class="settledhead" data-a="settled">' + (ui.showSettled ? '▾' : '▸') + ' Already part of your day (' + nDone + '/' + settled.length + ')</button>';
+    if (ui.showSettled) settled.forEach(function(x){ h += taskRow(x.id, textOn(x, t), null, isDone(x, r), 'toggle', true); });
+  }
+  return h;
+}
+function badView(t, r){
+  var h = '<h1>A gentle day</h1><p class="sub">Just these three. Doing them counts as a full day.</p>';
+  BAD_TASKS.forEach(function(b){ h += taskRow(b.id, b.text, null, !!r.badDone[b.id], 'bad'); });
+  var allBad = BAD_TASKS.every(function(b){ return r.badDone[b.id]; });
+  if (allBad) h += '<div class="donemsg' + (ui.prevDone.bad === false ? ' anim' : '') + '">That’s a full day. Well done.</div>';
+  ui.prevDone.bad = allBad;
+  if (smokeVisible(t)) {
+    h += '<div class="muted" style="margin:6px 2px 8px">Smoke-free</div><div class="smokes">';
+    PARTS.forEach(function(p){ h += smokeBtn(r, p, true); });
+    h += '</div>';
+  }
+  h += moodCard(r, true);
+  h += '<button class="link" data-a="unbad">Back to the normal day</button>';
+  return h;
+}
+function historySheet(t){
+  var h = '<h2>Mood, last 4 weeks</h2><div class="chart">';
+  var cur = [], prev = [];
+  for (var i = 27; i >= 0; i--) {
+    var k = addDays(t, -i), r = state.days[k];
+    var m = r && r.mood != null ? r.mood : null;
+    if (m != null) { if (i < 7) cur.push(m); else if (i < 14) prev.push(m); }
+    h += '<div class="c' + (i === 0 ? ' today' : '') + '" title="' + fmtShort(k) + '">' +
+      (m != null ? '<div class="b' + (r.bad ? ' bad' : '') + '" style="height:' + (m * 10) + '%"></div>' : '<div class="n"></div>') + '</div>';
+  }
+  h += '</div><div class="axis"><span>' + fmtShort(addDays(t, -27)) + '</span><span>Today</span></div>';
+  function avg(a){ return a.length ? (a.reduce(function(x, y){ return x + y; }, 0) / a.length).toFixed(1) : '–'; }
+  h += '<div class="stat"><div><b>' + avg(cur) + '</b><span>this week</span></div><div><b>' + avg(prev) + '</b><span>the week before</span></div></div>';
+  h += '<p class="muted">Gold bars are bad days. Small dots are days without a score.</p>';
+  return h + '<button class="btn ghost wide" data-a="close">Close</button>';
+}
+function menuSheet(t){
+  var h = '<h2>More</h2>';
+  h += '<button class="menuitem" data-a="history">Mood history<small>The last 4 weeks</small></button>';
+  h += '<button class="menuitem" data-a="export">Export week<small>A short summary to send by message or email</small></button>';
+  h += '<button class="menuitem" data-a="backup">Full backup<small>Save all history as a file</small></button>';
+  h += '<button class="menuitem" data-a="restore">Restore from backup<small>Load a backup file</small></button>';
+  if (state.added.smoke && state.smoke.hidden) h += '<button class="menuitem" data-a="smokeback">Bring back the smoke-free tick</button>';
+  h += '<button class="menuitem" data-a="help">How this works</button>';
+  if (TEST) {
+    h += '<p class="muted" style="margin:14px 2px 8px">Test mode (separate data)</p>';
+    h += '<button class="menuitem" data-a="tnext">Next day →<small>Now: ' + fmtLong(t) + '</small></button>';
+    h += '<button class="menuitem" data-a="tfill">Fill last 7 days<small>Ticks every active habit, random mood 5–8</small></button>';
+    h += '<button class="menuitem" data-a="treset">Reset test data</button>';
+  }
+  return h + '<button class="btn ghost wide" data-a="close">Close</button>';
+}
+function exportSheet(){
+  return '<h2>Export week</h2><pre class="export">' + esc(ui.exportText) + '</pre>' +
+    '<div class="row"><button class="btn" data-a="share" style="flex:1">Share</button><button class="btn ghost" data-a="copy" style="flex:1">Copy</button></div>' +
+    (ui.msg ? '<p class="muted" style="text-align:center">' + esc(ui.msg) + '</p>' : '') +
+    '<button class="link" data-a="close">Close</button>';
+}
+function helpSheet(){
+  return '<h2>How this works</h2><div class="help">' +
+    '<p>The day has three parts. Each part shows at most three things to do. The app opens on the part you’re in now; tap the others to look ahead or catch up.</p>' +
+    '<p>When a habit has been ticked on 6 of the last 7 days, it counts as part of your day. It moves to the small “Already part of your day” line, and the app offers one new habit. You can always say “Not yet”.</p>' +
+    '<p>On a hard day, tap “Bad day”. Three small things then count as a full day, and that day doesn’t count against anything.</p>' +
+    '<p>Everything is saved only on this phone. Make a full backup now and then.</p></div>' +
+    '<button class="btn ghost wide" data-a="close">Close</button>';
+}
+function confirmBadSheet(){
+  return '<h2>Having a hard day?</h2><p>That’s okay. Today will shrink to three small things: outside light, one proper meal and a short walk. Doing them counts as a full day.</p>' +
+    '<button class="btn wide" data-a="bad-on">Yes, make today gentle</button><button class="link" data-a="close">Cancel</button>';
+}
+
+function render(){
+  var t = todayKey();
+  evaluate(t);
+  save();
+  var r = rec(t);
+  var h = '';
+  if (TEST) h += '<div class="testbar">Test mode · separate data</div>';
+  h += '<div class="date">' + fmtLong(t) + '</div>';
+  h += r.bad ? badView(t, r) : mainView(t, r);
+  if (ui.saveError) h += '<p class="muted">Couldn’t save on this phone. Check that private browsing is off.</p>';
+  h += '<div class="footer">' + (r.bad ? '' : '<button class="btn ghost" data-a="askbad">Bad day</button>') +
+    '<button class="btn ghost" data-a="menu">More</button></div>';
+  if (ui.sheet) {
+    var s = ui.sheet === 'menu' ? menuSheet(t) : ui.sheet === 'history' ? historySheet(t) : ui.sheet === 'export' ? exportSheet() :
+      ui.sheet === 'help' ? helpSheet() : ui.sheet === 'bad' ? confirmBadSheet() : '';
+    h += '<div class="overlay' + (ui.prevSheet !== ui.sheet ? ' anim' : '') + '" data-a="backdrop"><div class="sheet" role="dialog">' + s + '</div></div>';
+  }
+  ui.prevSheet = ui.sheet;
+  app.innerHTML = h;
+}
+
+app.addEventListener('click', function(e){
+  var el = e.target.closest('[data-a]');
+  if (!el) return;
+  var a = el.getAttribute('data-a'), id = el.getAttribute('data-id');
+  if (a === 'backdrop') { if (e.target === el) { ui.sheet = null; render(); } return; }
+  switch (a) {
+    case 'toggle': toggle(id); break;
+    case 'mood': setMood(+el.getAttribute('data-v')); break;
+    case 'bad': toggleBadTask(id); break;
+    case 'part': ui.part = id; ui.showSettled = false; render(); break;
+    case 'settled': ui.showSettled = !ui.showSettled; render(); break;
+    case 'intro': state.intro = false; save(); render(); break;
+    case 'notice': state.notice = null; save(); render(); break;
+    case 'praise': state.praise = null; save(); render(); break;
+    case 'accept': acceptOffer(); break;
+    case 'snooze': snoozeOffer(); break;
+    case 'askbad': ui.sheet = 'bad'; render(); break;
+    case 'bad-on': setBad(true); break;
+    case 'unbad': setBad(false); break;
+    case 'menu': ui.sheet = 'menu'; ui.msg = ''; render(); break;
+    case 'close': ui.sheet = null; render(); break;
+    case 'history': ui.sheet = 'history'; render(); break;
+    case 'help': ui.sheet = 'help'; render(); break;
+    case 'export': ui.exportText = weekText(todayKey()); ui.msg = ''; ui.sheet = 'export'; render(); break;
+    case 'share': shareText(ui.exportText); break;
+    case 'copy': copyText(ui.exportText); break;
+    case 'backup': backup(); break;
+    case 'restore': document.getElementById('restorefile').click(); break;
+    case 'smokeback': bringBackSmoke(); break;
+    case 'tnext': testNextDay(); break;
+    case 'tfill': testFill(); break;
+    case 'treset': testReset(); break;
+  }
+});
+
+// When she comes back to the app, jump to the current part of the day.
+var lastSeenDay = null;
+document.addEventListener('visibilitychange', function(){
+  if (document.visibilityState !== 'visible') return;
+  ui.part = currentPart();
+  if (todayKey() !== lastSeenDay) { ui.showSettled = false; ui.sheet = null; }
+  lastSeenDay = todayKey();
+  render();
+});
+
+state = load();
+ui.part = currentPart();
+lastSeenDay = todayKey();
+render();
+
+// Exposed only for automated testing.
+window.__myday = {get state(){ return state; }, todayKey:todayKey, currentOffer:currentOffer, render:render};
+})();
+</script>
+</body>
+</html>
